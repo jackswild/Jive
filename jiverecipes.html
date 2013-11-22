@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jive recipes</title>
+	<link rel="stylesheet" type="text/css" href="jive.css" />	
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js"></script>
+	<script type="text/javascript" src="./scripts/jive_cocktailsearch.js"></script>
+</head>
+
+<body>
+
+
+<form name="cocktailSearchForm">
+
+<div class="">
+	Era:
+	<select id="ddlEra">
+
+	</select>
+</div>
+
+<div class="">
+	Brand:
+	<select id="ddlBrand">
+
+	</select>
+</div>
+
+<div class="">
+	Bitters:
+	<select id="ddlBitters">
+
+	</select>
+</div>
+
+<div class="">
+	Base Spirit:
+	<select id="ddlBaseSpirit">
+
+	</select>
+</div>
+
+<div class="">
+	Spirits:
+	<select id="ddlSpirits">
+
+	</select>
+</div>
+
+<input type="button" value="submit" onclick="performSearchButton()"/>
+</form>
+
+<div id="recipeContainer"></div>
+
+<div data-bind="template: { name: 'recipeListTemplate', data: recipeList }"></div>
+
+<script type="text/html" id="recipeListTemplate">
+	<div data-bind="template: {name: 'recipeTemplate', foreach: recipes, as: 'recipe'}"></div>
+</script>
+
+<script type="text/html" id="recipeTemplate">
+	<table border="1">
+		<tr><td>Cocktail:</td><td><span data-bind="text: name"></span> [<span data-bind="text: year"></span>] </td></tr>
+		<tr><td colspan="2"><span data-bind="text: description"></span></td></tr>
+		
+		<tr>
+		<td colspan="2"><ul data-bind="template: {name: 'ingredientTemplate', foreach: ingredients, as: 'ingredient'}">
+			</ul></td>
+		</tr>
+		<tr><td colspan="2"><span data-bind="text: instructions"></span></td></tr>
+		
+	</table>
+</script>
+
+<script type="text/html" id="ingredientTemplate">
+	<li><span data-bind="text: name"></span>: <span data-bind="text: amount"></span></li>
+</script>
+
+</body>
+
+</html>

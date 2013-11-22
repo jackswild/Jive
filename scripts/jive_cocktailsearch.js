@@ -1,7 +1,7 @@
 
 //for now, this becomes a default what you see when you go to the page load of all recipes
 //later, this can become all sorts of things
-$.getJSON("../data/cocktails.json", function(data) {
+$.getJSON("./data/cocktails.json", function(data) {
 
 	var items = [];
 
