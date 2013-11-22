@@ -143,7 +143,7 @@ function performSearchButton() {
 function doRecipeSearch(parameters)
 {
 	//get recipes - this code exists above 
-	$.getJSON("cocktails.json", function(data) {
+	$.getJSON("./data/cocktails.json", function(data) {
 		//getJson callback:
 		//filter them - this code already exists
 		var filteredRecipes = getRecipe(data.recipes, parameters);  
