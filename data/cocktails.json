@@ -1,4 +1,42 @@
 {"recipes": [
+	{"name": "Ascension",
+	     "year": "2012",
+	     "description": "Our tribute to Count de Saint-Germain: alchemist, charlatan, adventurer.",
+	     "technique": "stirred",
+	     "ice": "",
+	     "era": "modern",
+	     "glass": "up",
+	 	 "ingredients": [{
+	 	 		"tradeName": "Bombay Sapphire",
+	 	 		"ingredient": "gin",
+	 	 	 	"brand": "Bombay",
+	 	 	 	"type": "spirit",
+	 	 	 	"amount": "1 part",
+	 	 	 	"isBase" : true
+	 	 	},
+	 	 	{
+	 	 		"tradeName": "Bianco Vermouth",
+	 	 		"ingredient": "bianco vermouth",
+	 	 		"type": "spirit",
+	 	 	 	"brand": "Martini and Rossi",
+	 	 	 	"amount": "1 part"
+	 	 	 },	 	 	
+	 	 	{
+	 	 		"tradeName": "St-Germain Elderflower Liqueur",
+	 	 		"ingredient": "elderflower liqueur",
+	 	 	 	"brand": "St-Germain",
+	 	 	 	"type": "spirit",
+	 	 	 	"amount": "1 part"
+	 	 	},	 	 	
+	 	 	{
+	 	 		"tradeName": "Scrappy's Cardamom Bitters",
+	 	 		"ingredient": "cardamom bitters",
+	 	 	 	"type": "bitters",
+	 	 	 	"brand": "Scrappy's",
+	 	 	 	"amount": "1 dash"
+	 	 	}],
+	 	 "instructions": "Combine all ingredients in a mixing glass. Stir well with ice. Strain into a cocktail glass. Garnish with a lemon twist."
+	},
 	{"name": "The Lavender Splifficator",
 	     "year": "2012",
 	     "description": "A new take on ye olde Gin and Tonic",
@@ -136,8 +174,8 @@
 	 	 	 	"amount": "1 oz"
 	 	 	 },
 	 	 	{
-	 	 		"tradeName": "Blanco Vermouth",
-	 	 		"ingredient": "blanco vermouth",
+	 	 		"tradeName": "Bianco Vermouth",
+	 	 		"ingredient": "bianco vermouth",
 	 	 		"type": "spirit",
 	 	 	 	"brand": "Martini and Rossi",
 	 	 	 	"amount": "1 oz"
