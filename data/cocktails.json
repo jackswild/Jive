@@ -1,0 +1,152 @@
+{"recipes": [
+	{"name": "The Lavender Splifficator",
+	     "year": "2012",
+	     "description": "A new take on ye olde Gin and Tonic",
+	     "technique": "stirred",
+	     "ice": "cubed",
+	     "era": "modern",
+	     "glass": "high",
+	 	 "ingredients": [{
+	 	 		"tradeName": "Wire Works Gin",
+	 	 		"ingredient": "gin",
+	 	 	 	"brand": "GrandTen Distilling",
+	 	 	 	"type": "spirit",
+	 	 	 	"amount": "2 oz",
+	 	 	 	"isBase" : true
+	 	 	},
+	 	 	{	
+	 	 		"ingredient": "tonic water",
+	 	 	 	"type": "soda",
+	 	 	 	"amount": ""
+	 	 	},
+	 	 	{
+	 	 		"tradeName": "Scrappy's Lavender Bitters",
+	 	 		"ingredient": "lavender bitters",
+	 	 	 	"type": "bitters",
+	 	 	 	"brand": "Scrappy's",
+	 	 	 	"amount": "2 dashes"
+	 	 	}],
+	 	 "instructions": "In a highball glass, pour the gin over ice. Add two dashes of bitters, then top off with tonic water."
+	},
+	{"name": "Martini",
+     	"year": "1880s",
+     	"description": "The classic: always satisfying, never shaken.",
+     	"technique": "stirred",
+	 	"ice": "",
+		"era": "historical",
+		"glass": "up",
+ 	 	"ingredients": [{
+	 	 		"tradeName": "Wire Works Gin",
+	 	 		"ingredient": "gin",
+	 	 	 	"brand": "GrandTen Distilling",
+	 	 	 	"type": "spirit",
+	 	 	 	"amount": "2 oz",
+	 	 	 	"isBase" : true
+	 	 	},
+	 	 	{
+	 	 		"ingredient": "dry vermouth",
+	 	 		"type": "spirit",
+	 	 	 	"amount": "1 oz"
+	 	 	 },
+	 	 	{
+	 	 		"ingredient": "orange bitters",
+	 	 		"type": "bitters",
+	 	 	 	"amount": "1 dash"
+	 	 	}],
+ 	 "instructions": "Combine all ingredients in a mixing glass. Stir with ice. Strain into martini glass. Garnish with a lemon peel."
+ 	},
+    {"name": "Manhattan",
+    	"year": "1874",
+ 	 	"description": "Classic Rye perfection.",
+ 	 	"technique": "stirred",
+	 	"ice": "",
+		"era": "historical",
+		"glass": "up",
+ 	 	"ingredients": [{
+	 	 		"ingredient": "rye whiskey",
+	 	 	 	"type": "spirit",
+	 	 	 	"amount": "2 oz",
+	 	 	 	"isBase" : true
+	 	 	 },
+	 	 	{
+	 	 		"ingredient": "sweet vermouth",
+	 	 		"type": "spirit",
+	 	 	 	"amount": "1 oz"
+	 	 	 },
+	 	 	{
+	 	 		"tradeName": "Angostura Bitters",
+	 	 		"ingredient": "Angostura Bitters",
+	 	 		"type": "bitters",
+	 	 	 	"brand": "Angostura",
+	 	 	 	"amount": "1 dash"
+	 	 	 }],
+ 	 "instructions": "Combine all ingredients in a mixing glass. Stir with ice. Strain into Manhattan glass. Garnish with a cherry."	 
+	},
+    {"name": "Nat King Cole",
+    	"year": "2012",
+ 	 	"description": "All hail to the merry king! A marriage between two of our favorite liqueurs.",
+ 	 	"technique": "stirred",
+	 	"ice": "cubed",
+		"era": "modern",
+		"glass": "rocks",
+ 	 	"ingredients": [{
+	 	 		"tradeName": "Jack Daniels",
+	 	 	 	"ingredient": "whiskey",
+	 	 	 	"brand": "Jack Daniels",
+	 	 	 	"type": "spirit",
+	 	 	 	"amount": "2 oz",
+	 	 	 	"isBase" : true
+	 	 	 },
+	 	 	{
+	 	 		"tradeName": "St-Germain Elderflower Liqueur",
+	 	 		"ingredient": "elderflower liqueur",
+	 	 		"brand": "St-Germain",
+	 	 		"type": "spirit",
+	 	 	 	"amount": ".5 oz"
+	 	 	 },
+	 	 	{
+	 	 		"tradeName": "Fernet Branca",
+	 	 		"ingredient": "fernet",
+	 	 		"type": "spirit",
+	 	 	 	"brand": "Fratelli Branca",
+	 	 	 	"amount": ".25 oz"
+	 	 	 }],
+ 	 "instructions": "Combine all ingredients into a mixing glass. Stir with ice, and strain into a rocks glass over ice."	 
+	},
+   {"name": "In The Money!",
+    	"year": "2012",
+ 	 	"description": "Feel like ten grand with this tipple in your hand.",
+ 	 	"technique": "stirred",
+	 	"ice": "",
+		"era": "modern",
+		"glass": "up",
+ 	 	"ingredients": [{
+	 	 		"tradeName": "Wire Works Gin",
+	 	 	 	"ingredient": "gin",
+	 	 	 	"brand": "GrandTen Distilling",
+	 	 	 	"type": "spirit",
+	 	 	 	"amount": "1.5 oz",
+	 	 	 	"isBase" : true
+	 	 	 },
+	 	 	{
+	 	 		"tradeName": "Amère Nouvelle",
+	 	 		"ingredient": "amari",
+	 	 		"brand": "Bittermens",
+	 	 		"type": "spirit",
+	 	 	 	"amount": "1 oz"
+	 	 	 },
+	 	 	{
+	 	 		"tradeName": "Blanco Vermouth",
+	 	 		"ingredient": "blanco vermouth",
+	 	 		"type": "spirit",
+	 	 	 	"brand": "Martini and Rossi",
+	 	 	 	"amount": "1 oz"
+	 	 	 },
+	 	 	 {
+	 	 		"ingredient": "orange bitters",
+	 	 		"type": "bitters",
+	 	 	 	"amount": "1 dash"
+	 	 	 }],
+ 	 "instructions": "Combine all ingredients into a mixing glass. Stir with ice, and strain into a cocktail glass."	 
+	}]
+}
