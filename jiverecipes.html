@@ -21,6 +21,13 @@
 </div>
 
 <div class="">
+	Technique:
+	<select id="ddlTechnique">
+
+	</select>
+</div>
+
+<div class="">
 	Brand:
 	<select id="ddlBrand">
 
@@ -65,7 +72,7 @@
 		<tr><td colspan="2"><span data-bind="text: description"></span></td></tr>
 		
 		<tr>
-		<td colspan="2"><ul data-bind="template: {name: 'ingredientTemplate', foreach: ingredients, as: 'ingredient'}">
+		<td colspan="2"><ul data-bind="template: {name: 'ingredientTemplate', foreach: ingredients, as: 'ingredient'}" class="recipe">
 			</ul></td>
 		</tr>
 		<tr><td colspan="2"><span data-bind="text: instructions"></span></td></tr>

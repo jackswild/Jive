@@ -3,9 +3,21 @@ body {
 }
 
 .key {
-	background-color: #ff0000;
+	background-color: #999999;
 }
 
 .val {
-	background-color: #00ff00;
+	background-color: #aaaaaa;
+}
+
+.ingredients {
+	list-style-image: url('../img/smarrow.png');
+	margin: 0px 0px 0px 30px;
+	padding: 0px;
+}
+
+#recipeContainer {
+	width: 80%;
+	margin: auto;
+	border: 1px solid #000000;
 }

@@ -69,6 +69,15 @@ $.getJSON("./data/cocktails.json", function(data) {
 		bindDropdown("#ddlEra", valuesByEra);
 	}
 
+	var valuesByTechnique = getValues(data.recipes, "technique");
+	if (valuesByTechnique.length == 0)
+	{
+		alert("No values found for technique!");
+	}
+	else
+	{
+		bindDropdown("#ddlTechnique", valuesByTechnique);
+	}
 
 	// for each recipe in data.recipes
 	// WAS: $.each(data.recipes, function ( key, recipe)
@@ -101,6 +110,13 @@ function performSearchButton() {
 		//therefore, the code that looks at the parameters object to see if era exists or not 
 		// 		uses this line to know you want to search with era
 		param.era = selected;
+	}
+
+	ddl = cocktailSearchForm.ddlTechnique;
+	selected = ddl.options[ddl.selectedIndex].text;
+	if (selected);
+	{
+		param.technique = selected;
 	}
 
 	ddl = cocktailSearchForm.ddlBaseSpirit;
@@ -302,41 +318,42 @@ function addSortedDistinct(list, value)
 function renderRecipe(recipe, items)
 {
   $.each( recipe, function( key, val ) {
-      if (key =="ingredients")
+      if (key == "ingredients")
       {
         // ingredient template
-        items.push( "<tr><td class='key'>" + key + "</td><td class='val'>" + renderIngredients(val) + "</td></tr>" ); 
+        items.push("<tr><td class='key'>" + key + "</td><td class='val'>" + renderIngredients(val) + "</td></tr>"); 
       }
       else
       {
         // these are item templates
-        items.push( "<tr><td class='key'>" + key + "</td><td class='val'>" + val + "</td></tr>" );
+        items.push("<tr><td class='key'>" + key + "</td><td class='val'>" + val + "</td></tr>");
       }
+
   });
 }
 
 function renderIngredients(ingredientList)
 {
-	var output = "";
+	var output = "<ul class='ingredients'>";
 	if (ingredientList.length > 0)
 	{
 		for (var i=0; i<ingredientList.length;i++)
 		{
 			var ingredient = ingredientList[i];
 			// this line is my template
-
 			if (ingredient.tradeName) //if ingredient.tradeName is NOT null
 			{
 				//if there is a tradeName present
-				output +="<ul>" + ingredient.tradeName + ": " + ingredient.amount + "</ul>";
+				output +="<li>" + ingredient.tradeName + ": " + ingredient.amount + "</li>";
 			}
 			else	
 			{
 				//if the ingredient is not a tradeName
-				output += "<ul>" + ingredient.ingredient + ": " + ingredient.amount + "</ul>";		
+				output += "<li>" + ingredient.ingredient + ": " + ingredient.amount + "</li>";		
 			}
 		}
 	}
+	output += "</ul>";
 	return output;
 }
 
@@ -350,6 +367,7 @@ function getRecipe(allRecipes, parameters) {
 	addSearchPredicate(predicateList, predicateBaseSpiritIs, parameters.baseSpirit);
 	addSearchPredicate(predicateList, predicateSpiritIs, parameters.spirit);
 	addSearchPredicate(predicateList, predicateEraIs, parameters.era);
+	addSearchPredicate(predicateList, predicateTechniqueIs, parameters.technique);	
 	addSearchPredicate(predicateList, predicateBrandIs, parameters.brand);
 
 	return getRecipeByAdvancedSearch(allRecipes, predicateList, parameters.flagAll);
@@ -480,12 +498,6 @@ function predicateTechniqueIs(recipe, technique) {
 	return false;
 }
 
-function predicateEraIs(recipe, glass) {
-	if (recipe.glass == glass) {
-		return true;
-	}
-	return false;
-}
 
 // ARCHIVAL CODE BELOW ###################################
 
