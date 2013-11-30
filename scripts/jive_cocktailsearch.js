@@ -1,7 +1,20 @@
-
-//for now, this becomes a default what you see when you go to the page load of all recipes
-//later, this can become all sorts of things
 $.getJSON("./data/cocktails.json", function(data) {
+
+	//substring(1) removes the leading ? from query string
+	var queryString = window.location.search.substring(1);
+
+	var qsParams = parseQueryString(queryString);
+
+	//if I have a querystring, give me just the recipes I want (call dorecipesearch(qsParams)), otherwise do the below:
+	if (qsParams) {
+		doRecipeSearch(qsParams);
+	}
+	else {
+		renderRecipeInfo(data.recipes.sort(sortRecipesByName));
+		//bugfix; set qsParams to an empty object
+		qsParams = {};	
+	}
+
 
 	var items = [];
 
@@ -17,7 +30,7 @@ $.getJSON("./data/cocktails.json", function(data) {
 	}
 	else
 	{
-		bindDropdown("#ddlBaseSpirit", valuesByIngredient);
+		bindDropdown("#ddlBaseSpirit", valuesByIngredient, qsParams.spirit);
 	}	
 
 	var valuesBySpirit = getIngredientValues(data.recipes, "ingredient", function (ingredient) {
@@ -30,7 +43,7 @@ $.getJSON("./data/cocktails.json", function(data) {
 	}
 	else
 	{
-		bindDropdown("#ddlSpirits", valuesBySpirit);
+		bindDropdown("#ddlSpirits", valuesBySpirit, qsParams.spirit);
 	}	
 
 	var valuesByBrand = getIngredientValues(data.recipes, "brand", function (ingredient) {
@@ -43,7 +56,7 @@ $.getJSON("./data/cocktails.json", function(data) {
 	}
 	else
 	{
-		bindDropdown("#ddlBrand", valuesByBrand);
+		bindDropdown("#ddlBrand", valuesByBrand, qsParams.brand);
 	}
 
 	var valuesByBitters = getIngredientValues(data.recipes, "ingredient", function (ingredient) {
@@ -56,7 +69,7 @@ $.getJSON("./data/cocktails.json", function(data) {
 	}
 	else
 	{
-		bindDropdown("#ddlBitters", valuesByBitters);
+		bindDropdown("#ddlBitters", valuesByBitters, qsParams.bitters);
 	}
 
 	var valuesByEra = getValues(data.recipes, "era");
@@ -66,7 +79,7 @@ $.getJSON("./data/cocktails.json", function(data) {
 	}
 	else
 	{
-		bindDropdown("#ddlEra", valuesByEra);
+		bindDropdown("#ddlEra", valuesByEra, qsParams.era);
 	}
 
 	var valuesByTechnique = getValues(data.recipes, "technique");
@@ -76,34 +89,18 @@ $.getJSON("./data/cocktails.json", function(data) {
 	}
 	else
 	{
-		bindDropdown("#ddlTechnique", valuesByTechnique);
+		bindDropdown("#ddlTechnique", valuesByTechnique, qsParams.technique);
 	}
-
-	// for each recipe in data.recipes
-	// WAS: $.each(data.recipes, function ( key, recipe)
-	$.each(doRecipeSearch, function(key, recipe)
-	{
-	   renderRecipe(recipe, items);
-	});
- 
-  $("<table>", {
-    id: "recipeContainer",
-    html: items.join("")
-  }).replaceAll("#recipeContainer");
 }); //end of getJSON callback
 
-
-var DEFAULT_ITEM_SELECT = "--select item--";
-
-//rename this method - it's the search click method at the moment
+//search click method follows
 function performSearchButton() {
-
+	//TODO: Move the code that gets parameters from the form to a BindForm() method
 	var param = {};
 
 	var ddl = cocktailSearchForm.ddlEra;
 	var selected = ddl.options[ddl.selectedIndex].text;
-	if (selected);
-	{
+	if (selected) {
 		//what this implies but doesn't say explicitly is... 
 		//not just set era on param, 
 		//but create the era field on param if it does not exist
@@ -114,50 +111,39 @@ function performSearchButton() {
 
 	ddl = cocktailSearchForm.ddlTechnique;
 	selected = ddl.options[ddl.selectedIndex].text;
-	if (selected);
-	{
+	if (selected) {
 		param.technique = selected;
 	}
 
 	ddl = cocktailSearchForm.ddlBaseSpirit;
 	selected = ddl.options[ddl.selectedIndex].text;
-	if (selected);
-	{
+	if (selected) {
 		param.baseSpirit = selected;
 	}
 	ddl = cocktailSearchForm.ddlSpirits;
 	selected = ddl.options[ddl.selectedIndex].text;
-	if (selected);
-	{
+	if (selected) {
 		param.spirit = selected;
 	}
 	ddl = cocktailSearchForm.ddlBitters;
 	selected = ddl.options[ddl.selectedIndex].text;
-	if (selected);
-	{
+	if (selected) {
 		param.bitters = selected;
 	}
 	ddl = cocktailSearchForm.ddlBrand;
 	selected = ddl.options[ddl.selectedIndex].text;
-	if (selected);
-	{
+	if (selected) {
 		param.brand = selected;
 	}
-	//Add a "--select item--" entry to each ddl
 	//if the value is that, then do not add a parameter to the parameters object
 
-	doRecipeSearch(param, function(recipeList) {
-		renderRecipeInfo(recipeList);
-		renderRecipeClickableList(recipeList);
-	});
+	doRecipeSearch(param);
 }
-
 
 //Begin library code
 
 //create new method to get recipes, and then filter them with parameter object you pass in.
-function doRecipeSearch(parameters)
-{
+function doRecipeSearch(parameters) {
 	//get recipes - this code exists above 
 	$.getJSON("./data/cocktails.json", function(data) {
 		//getJson callback:
@@ -165,14 +151,40 @@ function doRecipeSearch(parameters)
 		var filteredRecipes = getRecipe(data.recipes, parameters);  
 
 		//render them
-		renderRecipeInfo(filteredRecipes);
+		var searchQuery = getSearchQuery(parameters);
+		renderSearchLink(searchQuery);
+		renderRecipeInfo(filteredRecipes.sort(sortRecipesByName));
 		renderRecipeClickableList(filteredRecipes);
 	});
 }
 
+function getSearchQuery(parameters) {
+//take parameters and pull out the key/value pairs. assemble into a search query.
+	var queryString = "?";
+	$.each(parameters, function(key, value) {
+		// put an equals sign between the key and value
+		var currentParam = key + "=" + encodeURI(value);
+		// put an ampersand between them if currentParam isn't the first value
+		// put them into a variable to assemble the string
+		if (queryString == "?") {
+			queryString += currentParam;
+		}
+		else {
+			queryString += "&" + currentParam;
+		}
+	});
+	return queryString;
+}
+
+function renderSearchLink(queryString) {
+	queryStringURL = window.location + queryString;
+	$("#queryStringLink").append(queryStringURL);
+}
+
+
+
 //create method to render recipes
-function renderRecipeInfo(recipeList)
-{
+function renderRecipeInfo(recipeList) {
 	var recipeItems = [];
 	// for each recipe in data.recipes
 	$.each(recipeList, function (key, recipe)
@@ -187,43 +199,29 @@ function renderRecipeInfo(recipeList)
 }
 
 //method to create clickable list of recipes
-function renderRecipeClickableList(recipeList)
-{
+function renderRecipeClickableList(recipeList) {
 
 }
 
- 
 //take a "values" list, assign it to an existing <select> ID in the html, and generate the dropdown from the
-function bindDropdown(ddlId, values) {
+function bindDropdown(ddlId, values, selectedValue) {
 	var ddl = $(ddlId);
+	
 	ddl.append(
 			$("<option></option>")
 		);
 	$.each(values, function(index, option) {
+
+		if (selectedValue === option) {
 		ddl.append(
+			$("<option selected></option>").val(index).html(option)
+		)}	
+		else {
+			ddl.append(
 			$("<option></option>").val(index).html(option)
-		);
+		)}
 	});
 }
-
-
-//look through all recipes in 'recipes' array for the 'era' item, and sort by given value.
-
-//function getRecipeByEra(recipeList, era) {
-//	var resultRecipes =[];
-//	for (var i=0; i<recipeList.length; i++) {
-//		
-//		// get recipe out of array by index
-//		var recipe = recipeList[i];
-//
-//		//if the recipe's era is equal to searchEra, then put it into resultRecipes
-//		if (recipe.era == era) {
-//			resultRecipes.push(recipe);
-//		}
-//	}
-//	return resultRecipes;	
-//}
-////////////////////
 
 //to generate any of the dropdowns:
 
@@ -279,9 +277,17 @@ function getIngredientValues(data, key, validPredicate) {
 	return resultIngredientList;
 }
 
+// take data.recipes, sort in descending alphabetical order by "name"
+function sortRecipesByName(recipe1, recipe2) {
+	if (recipe1.name < recipe2.name)
+		return -1;
+	if (recipe1.name > recipe2.name)
+		return 1;
+	return 0;
+};
+
 /// Add a value to the list in the correctly sorted location, and do not add it if it is a dupe 
-function addSortedDistinct(list, value)
-{
+function addSortedDistinct(list, value) {
 	//if there's just one item, just add it
 	if (list.length == 0)
 	{
@@ -312,11 +318,7 @@ function addSortedDistinct(list, value)
 	}
 }
 
-
-//////////////////////
-
-function renderRecipe(recipe, items)
-{
+function renderRecipe(recipe, items) {
   $.each( recipe, function( key, val ) {
       if (key == "ingredients")
       {
@@ -332,8 +334,7 @@ function renderRecipe(recipe, items)
   });
 }
 
-function renderIngredients(ingredientList)
-{
+function renderIngredients(ingredientList) {
 	var output = "<ul class='ingredients'>";
 	if (ingredientList.length > 0)
 	{
@@ -361,8 +362,8 @@ function renderIngredients(ingredientList)
 // SEARCH CODE BELOW ***************************
 // Take parameters object and load predicates into predicateList for getRecipeByAdvancedSearch
 function getRecipe(allRecipes, parameters) {
+	//TODO: This code has changed enough that it should be refactored; move the addSearchPredicate list to a new method to get that list
 	var predicateList = [];
-
 	addSearchPredicate(predicateList, predicateBittersIs, parameters.bitters);
 	addSearchPredicate(predicateList, predicateBaseSpiritIs, parameters.baseSpirit);
 	addSearchPredicate(predicateList, predicateSpiritIs, parameters.spirit);
@@ -373,8 +374,7 @@ function getRecipe(allRecipes, parameters) {
 	return getRecipeByAdvancedSearch(allRecipes, predicateList, parameters.flagAll);
 }
 
-function addSearchPredicate (predicateList, predicate, parameter)
-{
+function addSearchPredicate (predicateList, predicate, parameter) {
 	if (parameter)
 	{
 		predicateList.push(function (item) {
@@ -406,7 +406,7 @@ function getRecipeByAdvancedSearch(recipeList, findPredicateList, flagAll) {
 	  //so you'd iterate over all the recipes
 	 for (var i=0; i < recipeList.length; i++) {
 	   
-		//for each iteration, 'recipe' is the holder as you work through each item in allRecipes
+		//for each iteration, 'recipe' is the holder as you work through each item
 		var recipe = recipeList[i];
 
 		//for each recipe, if an ingredient is found that contains both ingredient="gin" AND isBase = true, put the cocktail 
@@ -498,68 +498,26 @@ function predicateTechniqueIs(recipe, technique) {
 	return false;
 }
 
+//url query string parsing
+function parseQueryString(queryString) {
+	var params = {},
+		queries,
+		temp,
+		i;
 
-// ARCHIVAL CODE BELOW ###################################
-
-//function getRecipeByBaseSpirit(allRecipes, baseSpirit) {
-//	return getRecipeByIngredient(allRecipes, function (ingredient) {
-//		return predicateBaseSpiritIs(ingredient, baseSpirit);
-//	});
-//}
-
-//function getRecipeByBitters(allRecipes, bitters) {
-//	return getRecipe(allRecipes, { bitters: bitters });
-//}
-
-//function getRecipeByIngredient(recipeList, findPredicate) {
-// this new array is where the list of recipes that satisfies the criteria is assembled
-//	var resultRecipes = [];
-//	  //so you'd iterate over all the recipes
-//	 for (var i=0; i < recipeList.length; i++) {   
-//		//for each iteration, 'recipe' is the holder as you work through each item in allRecipes
-//		var recipe = recipeList[i];
-		//for each recipe, if an ingredient is found that contains both ingredient="gin" AND isBase = true, put the cocktail 
-		//in the resultRecipes array.
-
-		//we iterate through the 'ingredients' array inside each recipe
-//		for (var j=0; j < recipe.ingredients.length; j++ ) {
-//			 var ingredient = recipe.ingredients[j];
-//			 if (findPredicate(ingredient))
-//			{
-//			 	resultRecipes.push(recipe)
-//			}
-//		}
-//	}
-	//and then return those that satisfy that criteria
-//	return resultRecipes;
-
-//}
-
-// NOTE: added baseSpirit parameter (was just "gin", which would fail)
-//function old_getRecipeByBaseSpirit(allRecipes, baseSpirit) {
-// this new array is where the list of recipes that satisfies the criteria is assembled
-//	var resultRecipes = [];
-
-	  //so you'd iterate over all the recipes
-//	 for (var i=0; i < allRecipes.length; i++) {
-	   
-		//for each iteration, 'recipe' is the holder as you work through each item in allRecipes
-//		var recipe = allRecipes[i];
-
-		//for each recipe, if an ingredient is found that contains both ingredient="gin" AND isBase = true, put the cocktail 
-		//in the resultRecipes array.
-
-		//we iterate through the 'ingredients' array inside each recipe
-//		for (var j=0; j < recipe.ingredients.length; j++ ) {
-
-//			 var ingredient = recipe.ingredients[j];
-
-//			 if (predicateBaseSpiritIs(ingredient, baseSpirit))
-//			 {
-//			 	resultRecipes.push(recipe)
-//			 }
-//		}
-//	}
-	//and then return those that satisfy that criteria
-//	return resultRecipes;
-//}
+	queries = queryString.split('&');
+	var isSet = false;
+	for (i=0; i<queries.length; i++) {
+		temp = queries[i].split('=');
+				//only set a key/value if we have a value
+		if (temp[1]) { 
+			params[temp[0]] = decodeURI(temp[1]);
+			isSet = true;
+		}
+	}
+	//if we do not have any values, return null
+	if (!isSet) {
+		params = null;
+	}
+	return params;
+};
