@@ -12,7 +12,7 @@ $.getJSON("./data/cocktails.json", function(data) {
 	else {
 		renderRecipeInfo(data.recipes.sort(sortRecipesByName));
 		//bugfix; set qsParams to an empty object
-		qsParams = {};	
+		qsParams = {};
 	}
 
 
@@ -21,74 +21,65 @@ $.getJSON("./data/cocktails.json", function(data) {
 	// With TDD (test driven development) you write your test FIRST, before even writing the code to satisfy it
 
 	var valuesByIngredient = getIngredientValues(data.recipes, "ingredient", function (ingredient) {
-		if (ingredient.isBase)
-			{ return true; }
+		if (ingredient.isBase) {
+			return true;
+		}
 	});
-	if (valuesByIngredient.length == 0)
-	{
-		alert("No values found for base spirit!");
+	if (valuesByIngredient.length === 0) {
+		alert("values found for base spirit!");
 	}
-	else
-	{
+	else {
 		bindDropdown("#ddlBaseSpirit", valuesByIngredient, qsParams.spirit);
-	}	
+	}
 
 	var valuesBySpirit = getIngredientValues(data.recipes, "ingredient", function (ingredient) {
 		// this line actually returns the boolean (true / false) result of this expression 
-		return (ingredient.type == "spirit");
+		return (ingredient.type === "spirit");
 	});
-	if (valuesBySpirit.length == 0)
-	{
+	if (valuesBySpirit.length === 0) {
 		alert("No values found for spirit!");
 	}
-	else
-	{
+	else {
 		bindDropdown("#ddlSpirits", valuesBySpirit, qsParams.spirit);
-	}	
+	}
 
 	var valuesByBrand = getIngredientValues(data.recipes, "brand", function (ingredient) {
-		if (ingredient.brand)
-			{ return true; }
+		if (ingredient.brand) {
+			return true;
+		}
 	});
-	if (valuesByBrand.length == 0)
-	{
+	if (valuesByBrand.length === 0) {
 		alert("No values found for Brand!");
 	}
-	else
-	{
+	else {
 		bindDropdown("#ddlBrand", valuesByBrand, qsParams.brand);
 	}
 
 	var valuesByBitters = getIngredientValues(data.recipes, "ingredient", function (ingredient) {
-		if (ingredient.type == "bitters")
-			{ return true; }
+		if (ingredient.type === "bitters") {
+			return true;
+		}
 	});
-	if (valuesByBitters.length == 0)
-	{
+	if (valuesByBitters.length === 0) {
 		alert("No values found for Bitters!");
 	}
-	else
-	{
+	else {
 		bindDropdown("#ddlBitters", valuesByBitters, qsParams.bitters);
 	}
 
 	var valuesByEra = getValues(data.recipes, "era");
-	if (valuesByEra.length == 0)
-	{
+	if (valuesByEra.length === 0) {
 		alert("No values found for era!");
 	}
-	else
-	{
+	else {
 		bindDropdown("#ddlEra", valuesByEra, qsParams.era);
 	}
 
 	var valuesByTechnique = getValues(data.recipes, "technique");
-	if (valuesByTechnique.length == 0)
-	{
+	if (valuesByTechnique.length === 0) {
 		alert("No values found for technique!");
 	}
-	else
-	{
+	else {
 		bindDropdown("#ddlTechnique", valuesByTechnique, qsParams.technique);
 	}
 }); //end of getJSON callback
@@ -105,7 +96,7 @@ function performSearchButton() {
 		//not just set era on param, 
 		//but create the era field on param if it does not exist
 		//therefore, the code that looks at the parameters object to see if era exists or not 
-		// 		uses this line to know you want to search with era
+		//uses this line to know you want to search with era
 		param.era = selected;
 	}
 
@@ -148,7 +139,7 @@ function doRecipeSearch(parameters) {
 	$.getJSON("./data/cocktails.json", function(data) {
 		//getJson callback:
 		//filter them - this code already exists
-		var filteredRecipes = getRecipe(data.recipes, parameters);  
+		var filteredRecipes = getRecipe(data.recipes, parameters);
 
 		//render them
 		var searchQuery = getSearchQuery(parameters);
@@ -166,7 +157,7 @@ function getSearchQuery(parameters) {
 		var currentParam = key + "=" + encodeURI(value);
 		// put an ampersand between them if currentParam isn't the first value
 		// put them into a variable to assemble the string
-		if (queryString == "?") {
+		if (queryString === "?") {
 			queryString += currentParam;
 		}
 		else {
@@ -177,7 +168,7 @@ function getSearchQuery(parameters) {
 }
 
 function renderSearchLink(queryString) {
-	queryStringURL = window.location + queryString;
+	var queryStringURL = window.location + queryString;
 	$("#queryStringLink").append(queryStringURL);
 }
 
@@ -187,15 +178,14 @@ function renderSearchLink(queryString) {
 function renderRecipeInfo(recipeList) {
 	var recipeItems = [];
 	// for each recipe in data.recipes
-	$.each(recipeList, function (key, recipe)
-	{
-	   renderRecipe(recipe, recipeItems);
+	$.each(recipeList, function (key, recipe) {
+		renderRecipe(recipe, recipeItems);
 	});
- 
-    $("<table>", {
-    	id: "recipeContainer", 
-    	html: recipeItems.join("")
-  	}).replaceAll("#recipeContainer");
+
+	$("<table>", {
+		id: "recipeContainer",
+		html: recipeItems.join("")
+	}).replaceAll("#recipeContainer");
 }
 
 //method to create clickable list of recipes
@@ -215,7 +205,7 @@ function bindDropdown(ddlId, values, selectedValue) {
 		if (selectedValue === option) {
 		ddl.append(
 			$("<option selected></option>").val(index).html(option)
-		)}	
+		)}
 		else {
 			ddl.append(
 			$("<option></option>").val(index).html(option)
@@ -236,7 +226,7 @@ function getValues(data, key) {
 	var resultList = []; //where raw list is assembled
 
 	//goes through list of recipes one by one		
-	for (var i=0; i<data.length; i++) { 
+	for (var i = 0; i < data.length; i++) { 
 		//current recipe being worked on
 		var item = data[i];  
 		//pull the value from the key, and put it in resultList
@@ -248,27 +238,27 @@ function getValues(data, key) {
 
 function getIngredientValues(data, key, validPredicate) {
 	//put all of the recipes into an array;	
-	var resultIngredientList = []; //where raw list is assembled
+	//raw list is assembled in the below array
+	var resultIngredientList = [];
 
-	//goes through list of recipes one by one		
-	for (var i=0; i<data.length; i++) { 
+	//goes through list of recipes one by one
+	for (var i = 0; i < data.length; i++) {
 		//current recipe being worked on
-		var recipe = data[i];  
+		var recipe = data[i];
 		
 		// iterate over recipe.ingredients
-		for (var j=0; j<recipe.ingredients.length; j++) { 
+		for (var j = 0; j < recipe.ingredients.length; j++) {
 			var ingredient = recipe.ingredients[j];
 
 			// if validPredicate exists then use it
-			if (validPredicate)
-			{
-				if (validPredicate(ingredient))
-				{
+			if (validPredicate) {
+				if (validPredicate(ingredient)) {
 					addSortedDistinct(resultIngredientList, ingredient[key]);
 					continue;
 				}
-			} else //no validPredicate, so always push
-			{
+			}
+			//no validPredicate, so always push
+			else {
 				// push ingredient[key] onto resultIngredientList
 				addSortedDistinct(resultIngredientList, ingredient[key]);
 			}
@@ -279,18 +269,19 @@ function getIngredientValues(data, key, validPredicate) {
 
 // take data.recipes, sort in descending alphabetical order by "name"
 function sortRecipesByName(recipe1, recipe2) {
-	if (recipe1.name < recipe2.name)
+	if (recipe1.name < recipe2.name) {
 		return -1;
-	if (recipe1.name > recipe2.name)
+	}
+	if (recipe1.name > recipe2.name) {
 		return 1;
+	}
 	return 0;
-};
+}
 
 /// Add a value to the list in the correctly sorted location, and do not add it if it is a dupe 
 function addSortedDistinct(list, value) {
 	//if there's just one item, just add it
-	if (list.length == 0)
-	{
+	if (list.length === 0) {
 		list.push(value);
 		return;
 	}
@@ -298,35 +289,32 @@ function addSortedDistinct(list, value) {
 	//find the correct location in the list, hunting through it
 	//iterate through the array
 	//find the index where indexed item is less than value, and index+1 is greater than value
-	var i=0;
-	var a=list[i];
+	var i = 0;
+	var a = list[i];
 	// below line MUST take place, it is a bugfix to prevent first item being duplicated
-	if (a==value) return;
+	if (a === value) return;
 	
-	while (a<value && i<list.length)
-	{
+	while (a < value && i < list.length) {
 		i++;
 		a = list[i];
-		if (a==value) return;
+		if (a === value) return;
 	}
 	// i is now the index of the first item a that is greater than value
-	if (i==list.length)
-	{
+	if (i === list.length) {
 		list.push(value);
-	} else {
+	}
+	else {
 		list.splice(i, 0, value);
 	}
 }
 
 function renderRecipe(recipe, items) {
   $.each( recipe, function( key, val ) {
-      if (key == "ingredients")
-      {
+      if (key == "ingredients") {
         // ingredient template
-        items.push("<tr><td class='key'>" + key + "</td><td class='val'>" + renderIngredients(val) + "</td></tr>"); 
+        items.push("<tr><td class='key'>" + key + "</td><td class='val'>" + renderIngredients(val) + "</td></tr>");
       }
-      else
-      {
+      else {
         // these are item templates
         items.push("<tr><td class='key'>" + key + "</td><td class='val'>" + val + "</td></tr>");
       }
@@ -336,21 +324,18 @@ function renderRecipe(recipe, items) {
 
 function renderIngredients(ingredientList) {
 	var output = "<ul class='ingredients'>";
-	if (ingredientList.length > 0)
-	{
-		for (var i=0; i<ingredientList.length;i++)
-		{
+	if (ingredientList.length > 0) {
+		for (var i = 0; i < ingredientList.length; i++) {
 			var ingredient = ingredientList[i];
 			// this line is my template
-			if (ingredient.tradeName) //if ingredient.tradeName is NOT null
-			{
+			//if ingredient.tradeName is NOT null
+			if (ingredient.tradeName) {
 				//if there is a tradeName present
-				output +="<li>" + ingredient.tradeName + ": " + ingredient.amount + "</li>";
+				output += "<li>" + ingredient.tradeName + ": " + ingredient.amount + "</li>";
 			}
-			else	
-			{
+			else {
 				//if the ingredient is not a tradeName
-				output += "<li>" + ingredient.ingredient + ": " + ingredient.amount + "</li>";		
+				output += "<li>" + ingredient.ingredient + ": " + ingredient.amount + "</li>";
 			}
 		}
 	}
@@ -374,10 +359,9 @@ function getRecipe(allRecipes, parameters) {
 	return getRecipeByAdvancedSearch(allRecipes, predicateList, parameters.flagAll);
 }
 
-function addSearchPredicate (predicateList, predicate, parameter) {
-	if (parameter)
-	{
-		predicateList.push(function (item) {
+function addSearchPredicate(predicateList, predicate, parameter) {
+	if (parameter) {
+		predicateList.push(function(item) {
 			return predicate(item, parameter);
 		});
 	}
@@ -385,63 +369,54 @@ function addSearchPredicate (predicateList, predicate, parameter) {
 
 // if one ingredient in recipe matches predicate, return true, otherwise return false
 function matchRecipe(recipe, predicate) {
-	if (predicate(recipe))
-	{
+	if (predicate(recipe)) {
 		return true;
 	}
 	//we iterate through the 'ingredients' array inside each recipe
-	for (var i=0; i < recipe.ingredients.length; i++) 
-	{		
-		if (predicate(recipe.ingredients[i]))
-		{
+	for (var i = 0; i < recipe.ingredients.length; i++) {
+		if (predicate(recipe.ingredients[i])) {
 			return true;
 		}
 	}
 	return false;
 }
+
 function getRecipeByAdvancedSearch(recipeList, findPredicateList, flagAll) {
 // this new array is where the list of recipes that satisfies the criteria is assembled
 	var resultRecipes = [];
 
-	  //so you'd iterate over all the recipes
-	 for (var i=0; i < recipeList.length; i++) {
-	   
+	//so you'd iterate over all the recipes
+	for (var i = 0; i < recipeList.length; i++) {
 		//for each iteration, 'recipe' is the holder as you work through each item
 		var recipe = recipeList[i];
 
 		//for each recipe, if an ingredient is found that contains both ingredient="gin" AND isBase = true, put the cocktail 
-		//in the resultRecipes array.	
+		//in the resultRecipes array.
 		var matched = false;
 			
 		//AND: cocktail must have ingredients that match all predicates
 		//OR: cocktail must match one predicate
-		 for (var k=0; k < findPredicateList.length; k++)
-		 {
-			if (matchRecipe(recipe, findPredicateList[k]))
-			{
+		for (var k = 0; k < findPredicateList.length; k++) {
+			if (matchRecipe(recipe, findPredicateList[k])) {
 				// set initial true if this is the first match
-				matched = true;									
-				if (!flagAll)
-				{
+				matched = true;
+				if (!flagAll) {
 					// if we only have to match one, then go ahead and exit the loop because we've just matched one
 					break;
-				}								
-			}	
-			else
-			{
+				}
+			}
+			else {
 				//DO NOT UNSET the matched value UNLESS we must match all
 				//if all predicates have to match, and we've reached here, it means a predicate did not match, and we fail.				
-				if (flagAll)
-				{
+				if (flagAll) {
 					matched = false; 
 					break;
 				}
-			}			
+			}
 		}
-		if (matched)
-		{
-			 resultRecipes.push(recipe)
-		}			 					
+		if (matched) {
+			resultRecipes.push(recipe);
+		}
 	}
 	//and then return those that satisfy that criteria
 	return resultRecipes;
@@ -451,48 +426,48 @@ function getRecipeByAdvancedSearch(recipeList, findPredicateList, flagAll) {
 
 function predicateBaseSpiritIs(ingredient, baseSpirit) {
 	//we poll to see if a given ingredient is a base spirit
-	if (ingredient.isBase == true) {
-		if (ingredient.ingredient == baseSpirit) {
-			return true;	  
+	if (ingredient.isBase === true) {
+		if (ingredient.ingredient === baseSpirit) {
+			return true;
 		}
 	}
 	return false;
 }
 
 function predicateBrandIs(ingredient, brand) {
-	if (ingredient.brand==brand) {
-			return true;	  
+	if (ingredient.brand === brand) {
+		return true;
 		}
 	return false;
 }
 
 function predicateBittersIs(ingredient, bitters) {
-	if (ingredient.type == "bitters") {
-		if (ingredient.ingredient == bitters) {
-			return true;	  
+	if (ingredient.type === "bitters") {
+		if (ingredient.ingredient === bitters) {
+			return true;
 		}
 	}
 	return false;
 }
 
 function predicateSpiritIs(ingredient, spirit) {
-	if (ingredient.type == "spirit") {
-		if (ingredient.ingredient == spirit) {
-			return true;	  
-		}  
+	if (ingredient.type === "spirit") {
+		if (ingredient.ingredient === spirit) {
+			return true;
+		}
 	}
 	return false;
 }	
 
 function predicateEraIs(recipe, era) {
-	if (recipe.era == era) {
+	if (recipe.era === era) {
 		return true;
 	}
 	return false;
 }
 
 function predicateTechniqueIs(recipe, technique) {
-	if (recipe.technique == technique) {
+	if (recipe.technique === technique) {
 		return true;
 	}
 	return false;
@@ -505,12 +480,12 @@ function parseQueryString(queryString) {
 		temp,
 		i;
 
-	queries = queryString.split('&');
+	queries = queryString.split("&");
 	var isSet = false;
-	for (i=0; i<queries.length; i++) {
-		temp = queries[i].split('=');
+	for (i = 0; i < queries.length; i++) {
+		temp = queries[i].split("=");
 				//only set a key/value if we have a value
-		if (temp[1]) { 
+		if (temp[1]) {
 			params[temp[0]] = decodeURI(temp[1]);
 			isSet = true;
 		}
@@ -520,4 +495,4 @@ function parseQueryString(queryString) {
 		params = null;
 	}
 	return params;
-};
+}
