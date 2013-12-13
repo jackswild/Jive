@@ -78,7 +78,8 @@
 	     "era": "historical",
 	     "glass": "up",
 	 	 "ingredients": [{
-	 	 		"ingredient": "rye whiskey",
+	 	 		"tradeName": "rye whiskey",
+	 	 		"ingredient": "whiskey",
 	 	 	 	"type": "spirit",
 	 	 	 	"amount": "2 oz",
 	 	 	 	"isBase": true
@@ -178,7 +179,8 @@
 	     "era": "modern",
 	     "glass": "up",
 	 	 "ingredients": [{
-	 	 		"ingredient": "Canadian Whiskey",
+	 	 		"tradeName": "Canadian whiskey",
+	 	 		"ingredient": "whiskey",
 	 	 	 	"type": "spirit",
 	 	 	 	"amount": "2 oz",
 	 	 	 	"isBase": true
@@ -302,7 +304,8 @@
 	     "era": "modern",
 	     "glass": "rocks",
 	 	 "ingredients": [{
-	 	 		"ingredient": "blended scotch",
+	 	 		"tradeName": "blended Scotch",
+	 	 		"ingredient": "scotch",
 	 	 	 	"type": "spirit",
 	 	 	 	"amount": "2 oz",
 	 	 	 	"isBase" : true
@@ -329,7 +332,8 @@
 	     "era": "historical",
 	     "glass": "rocks",
 	 	 "ingredients": [{
-	 	 		"ingredient": "rye whiskey",
+	 	 		"tradeName": "rye whiskey",
+	 	 		"ingredient": "whiskey",
 	 	 	 	"type": "spirit",
 	 	 	 	"amount": "2.5 oz",
 	 	 	 	"isBase" : true
@@ -394,7 +398,7 @@
 	     "glass": "up",
 	 	 "ingredients": [{
 	 	 		"tradeName": "Breaking and Entering Bourbon",
-	 	 		"ingredient": "bourbon whiskey",
+	 	 		"ingredient": "whiskey",
 	 	 	 	"brand": "St. George Spirits",
 	 	 	 	"type": "spirit",
 	 	 	 	"amount": "2.25 oz",
@@ -468,7 +472,7 @@
 	 	 	},
 	 	 	{
 	 	 		"tradeName": "Breaking and Entering Bourbon",
-	 	 		"ingredient": "bourbon whiskey",
+	 	 		"ingredient": "whiskey",
 	 	 	 	"brand": "St. George Spirits",
 	 	 	 	"type": "spirit",
 	 	 	 	"amount": "1.5 oz",
@@ -642,7 +646,8 @@
 		"era": "historical",
 		"glass": "up",
  	 	"ingredients": [{
-	 	 		"ingredient": "rye whiskey",
+ 	 			"tradeName": "rye whiskey",
+	 	 		"ingredient": "whiskey",
 	 	 	 	"type": "spirit",
 	 	 	 	"amount": "2 oz",
 	 	 	 	"isBase" : true

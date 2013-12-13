@@ -8,8 +8,7 @@ $.getJSON("./data/cocktails.json", function(data) {
 	//if I have a querystring, give me just the recipes I want (call dorecipesearch(qsParams)), otherwise do the below:
 	if (qsParams) {
 		doRecipeSearch(qsParams);
-	}
-	else {
+	} else {
 		renderRecipeInfo(data.recipes.sort(sortRecipesByName));
 		//bugfix; set qsParams to an empty object
 		qsParams = {};
@@ -27,8 +26,7 @@ $.getJSON("./data/cocktails.json", function(data) {
 	});
 	if (valuesByIngredient.length === 0) {
 		alert("values found for base spirit!");
-	}
-	else {
+	} else {
 		bindDropdown("#ddlBaseSpirit", valuesByIngredient, qsParams.spirit);
 	}
 
@@ -38,8 +36,7 @@ $.getJSON("./data/cocktails.json", function(data) {
 	});
 	if (valuesBySpirit.length === 0) {
 		alert("No values found for spirit!");
-	}
-	else {
+	} else {
 		bindDropdown("#ddlSpirits", valuesBySpirit, qsParams.spirit);
 	}
 
@@ -50,8 +47,7 @@ $.getJSON("./data/cocktails.json", function(data) {
 	});
 	if (valuesByBrand.length === 0) {
 		alert("No values found for Brand!");
-	}
-	else {
+	} else {
 		bindDropdown("#ddlBrand", valuesByBrand, qsParams.brand);
 	}
 
@@ -62,24 +58,21 @@ $.getJSON("./data/cocktails.json", function(data) {
 	});
 	if (valuesByBitters.length === 0) {
 		alert("No values found for Bitters!");
-	}
-	else {
+	} else {
 		bindDropdown("#ddlBitters", valuesByBitters, qsParams.bitters);
 	}
 
 	var valuesByEra = getValues(data.recipes, "era");
 	if (valuesByEra.length === 0) {
 		alert("No values found for era!");
-	}
-	else {
+	} else {
 		bindDropdown("#ddlEra", valuesByEra, qsParams.era);
 	}
 
 	var valuesByTechnique = getValues(data.recipes, "technique");
 	if (valuesByTechnique.length === 0) {
 		alert("No values found for technique!");
-	}
-	else {
+	} else {
 		bindDropdown("#ddlTechnique", valuesByTechnique, qsParams.technique);
 	}
 }); //end of getJSON callback
@@ -159,8 +152,7 @@ function getSearchQuery(parameters) {
 		// put them into a variable to assemble the string
 		if (queryString === "?") {
 			queryString += currentParam;
-		}
-		else {
+		} else {
 			queryString += "&" + currentParam;
 		}
 	});
@@ -205,8 +197,7 @@ function bindDropdown(ddlId, values, selectedValue) {
 		if (selectedValue === option) {
 		ddl.append(
 			$("<option selected></option>").val(index).html(option)
-		)}
-		else {
+		)} else {
 			ddl.append(
 			$("<option></option>").val(index).html(option)
 		)}
@@ -256,9 +247,8 @@ function getIngredientValues(data, key, validPredicate) {
 					addSortedDistinct(resultIngredientList, ingredient[key]);
 					continue;
 				}
-			}
 			//no validPredicate, so always push
-			else {
+			} else {
 				// push ingredient[key] onto resultIngredientList
 				addSortedDistinct(resultIngredientList, ingredient[key]);
 			}
@@ -302,24 +292,21 @@ function addSortedDistinct(list, value) {
 	// i is now the index of the first item a that is greater than value
 	if (i === list.length) {
 		list.push(value);
-	}
-	else {
+	} else {
 		list.splice(i, 0, value);
 	}
 }
 
 function renderRecipe(recipe, items) {
-  $.each( recipe, function( key, val ) {
-      if (key == "ingredients") {
-        // ingredient template
-        items.push("<tr><td class='key'>" + key + "</td><td class='val'>" + renderIngredients(val) + "</td></tr>");
-      }
-      else {
-        // these are item templates
-        items.push("<tr><td class='key'>" + key + "</td><td class='val'>" + val + "</td></tr>");
-      }
-
-  });
+	$.each( recipe, function( key, val ) {
+		if (key == "ingredients") {
+			// ingredient template
+			items.push("<tr><td class='key'>" + key + "</td><td class='val'>" + renderIngredients(val) + "</td></tr>");
+		} else {
+			// these are item templates
+			items.push("<tr><td class='key'>" + key + "</td><td class='val'>" + val + "</td></tr>");
+		}
+	});
 }
 
 function renderIngredients(ingredientList) {
@@ -332,8 +319,7 @@ function renderIngredients(ingredientList) {
 			if (ingredient.tradeName) {
 				//if there is a tradeName present
 				output += "<li>" + ingredient.tradeName + ": " + ingredient.amount + "</li>";
-			}
-			else {
+			} else {
 				//if the ingredient is not a tradeName
 				output += "<li>" + ingredient.ingredient + ": " + ingredient.amount + "</li>";
 			}
@@ -404,8 +390,7 @@ function getRecipeByAdvancedSearch(recipeList, findPredicateList, flagAll) {
 					// if we only have to match one, then go ahead and exit the loop because we've just matched one
 					break;
 				}
-			}
-			else {
+			} else {
 				//DO NOT UNSET the matched value UNLESS we must match all
 				//if all predicates have to match, and we've reached here, it means a predicate did not match, and we fail.				
 				if (flagAll) {
