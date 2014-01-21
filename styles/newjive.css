@@ -1,0 +1,269 @@
+body {
+	background-color: #222;
+	background-image: url(http://dev.jessicamarcus.com/Jive/img/jivebgimg.jpg);
+	background-size: 100%;
+	background-attachment: fixed;
+}
+
+#contentContainer {
+	position: absolute;
+	top: 30%;
+	left: 15%;
+	width: 70%;
+	min-height: 60%;
+	background-color: rgba(194, 183, 165,.7);
+	border-radius: 3px;
+	border: solid 1px #000000;
+	padding: 5px 10px 5px 10px;
+	font-family: "Alice", "Book Antiqua", Palatino, serif;
+	text-shadow: .07em .07em .01em #a49e8f;
+}
+
+#contentContainer > *:last-child::after {
+	display: block;
+	position: absolute;
+	bottom: 0px;
+	padding: 20px 0px 20px 0px;
+	left: 47%;
+	margin: 0px auto;
+	content: url(http://dev.jessicamarcus.com/Jive/img/divider.png);	
+}
+
+/* aka 2014VersionOf1x1ClearGif :D */
+#contentContainer::after {
+	padding-bottom: 100px;
+	content: ".";
+	text-shadow: 0px 0px 0px;
+	color: rgba(0, 0, 0, 0);
+}
+
+#logoContainer {
+	position: absolute;
+	top: 5%;
+	right: 5%;
+	width: 35%;
+}
+
+#navContainer {
+	position: fixed;
+	top: 10%;
+	left: 0px;
+	width: 15.3%;
+	margin: 0px;
+	z-index: 1;	
+}
+
+#navMenu {
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+}
+
+#navMenu a {
+	background-color: #222222;
+	color: #eeeae2; 
+	display: block;
+	padding: 4px;
+	padding-left: 10px;
+	font-family: 'Poller One', sans-serif;
+	font-size: 18px;
+	text-decoration: none;
+	text-shadow: 1px 1px 1px #000000;
+	box-shadow: 0px 1px 5px #111111;
+}
+
+#navMenu li:first-of-type a {
+	padding-top: 5px; 
+	border-radius: 0px 10px 0px 0px;
+}
+
+#navMenu li:last-of-type a {
+	padding-bottom: 15px; 
+	border-radius: 0px 0px 10px 0px;
+}
+
+#navMenu a:hover {
+	color: #b75f67;
+	background-color: #000000;
+}
+
+#navMenu a:active {
+	color: #222222;
+}
+
+#contentContainer a {
+	text-decoration: none;
+	color: #111111;
+	border-bottom: 1px dotted #111111;
+	font-weight: bold;
+}
+
+#contentContainer a:hover {
+	border: 0px;
+}
+
+a img, img {
+	border: 0px;
+}
+
+h1, h2 {
+	font-family: 'Oleo Script Swash Caps', cursive;
+	font-size: 4em;
+	margin: 5px 0px 0px 0px;
+}
+
+h2 {
+	font-size: 3.1em;
+}
+
+h3 {
+	font-family: "Poller One", sans-serif;
+	font-size: 1.25em;
+	margin:5px 0px;	
+}
+
+b {
+	font-weight: bold;
+}
+
+i {
+	font-style: italic;
+}
+
+p {
+	padding: 0px 15px 20px 15px;
+	margin: 0px;
+	font-size: 1em;
+	color: #111111;
+}
+p:last-of-type {
+	padding-bottom: 50px;
+}
+
+#recipeContainer > p {
+	padding: 0px 0px 20px 0px;
+}
+
+#cocktailSearchBox {
+	width: 70%;
+	margin: 0px auto;
+	margin-bottom: 20px;
+	padding: 15px;
+	padding-top: 5px;
+	border-radius: 5px;
+	box-shadow: 0px 0px 8px #222;
+	background-color: rgba(25%, 25%, 25%, 0.2);
+}
+
+#cocktailSearchForm > table {
+	margin: 0px auto;
+	margin-bottom: 15px;
+	font-family: "Poller One", sans-serif;
+/*	display: none; */
+}
+
+#cocktailSearchForm td:nth-child(2n+1) {
+	text-align: right;
+}
+
+.searchButton {
+	margin: 0px auto;
+	width: 150px;
+	border-top: 1px solid #c07278;
+	background: #a94c54;
+	background: -webkit-gradient(linear, left top, left bottom, from(#8d3f46), to(#a94c54));
+	background: -webkit-linear-gradient(top, #8d3f46, #a94c54);
+	background: -moz-linear-gradient(top, #8d3f46, #a94c54);
+	background: -ms-linear-gradient(top, #8d3f46, #a94c54);
+	background: -o-linear-gradient(top, #8d3f46, #a94c54);
+	padding: 5px 10px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	-webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+	-moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+	box-shadow: rgba(0,0,0,1) 0 1px 0;
+	text-shadow: rgba(0,0,0,.4) 0 1px 0;
+	color: #eeeae2;
+	font-size: 14px;
+	font-family: "Poller One", sans-serif;
+	text-decoration: none;
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+}
+
+.searchButton:active {
+   	position: relative;
+	top: 2px;
+	left: 1px;
+	box-shadow: none;
+}
+
+#recipeContainer {
+	width: 70%;
+	margin: 0px auto;
+	padding-bottom: 20px;
+}
+
+#recipeContainer::after:not(#recipeContainer:last-child) {
+	position: absolute;
+	bottom: 0px;
+	left: 50%;
+	margin-left: -50px;
+	content: url(http://dev.jessicamarcus.com/Jive/img/divider2.png);	
+}
+
+#recipeContainer ul {
+	list-style-image: url('../img/smarrow.png');
+	margin: 0px 0px 5px 30px;
+	padding: 0px;
+}
+
+.cYear, .cDesc {
+	font-style: italic;
+	position: relative;
+	top: -5px;
+	margin-right: 5px;
+}
+
+.cYear {
+	font-weight: bold;
+	font-size: 1.25em;
+}
+
+.cIngredients {
+
+}
+
+select {
+	background-color: #eeeae2;
+	border-radius: 3px;
+}
+
+select:focus {
+	outline-color: #b75f67;
+}
+
+.decoImg {
+	width: 100%;
+	margin: 0px auto;
+	padding: 20px 0px;
+}
+
+.event {
+	 clear: both;
+	 vertical-align: top;
+	 overflow: auto;
+	 margin-bottom: 20px;
+}
+.eventFlyer {
+	border: 5px double #000;
+	margin-left: 5px;
+	float: right;
+}
+
+.largePhoto {
+	border: 5px double #000;
+	margin: 0px auto;
+}

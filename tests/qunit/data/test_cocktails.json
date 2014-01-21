@@ -1,0 +1,736 @@
+{"recipes": [
+	{"name": "Rose Garden",
+	     "year": "2013",
+	     "description": "Nothing sweeter than this...",
+	     "technique": "shaken",
+	     "ice": "",
+	     "era": "modern",
+	     "glass": "up",
+	 	 "ingredients": [{
+	 	 		"tradeName": "Wire Works Gin",
+	 	 		"ingredient": "gin",
+	 	 		"brand": "GrandTen Distilling",
+	 	 	 	"type": "spirit",
+	 	 	 	"amount": "2 oz",
+	 	 	 	"isBase": true
+	 	 	},
+	 	 	{
+	 	 		"tradeName": "Creme Yvette",
+	 	 		"ingredient": "Creme Yvette",
+	 	 	 	"type": "spirit",
+	 	 	 	"amount": "1 oz"
+	 	 	},
+	 	 	{ 	
+	 	 		"ingredient": "lemon juice",
+	 	 		"type": "juice",
+	 	 		"amount": ".5 oz"
+	 	 	},
+	 	 	{
+	 	 		"tradeName": "GrandTen Amandine Liqueur",
+	 	 		"ingredient": "almond liqueur",
+	 	 		"brand": "GrandTen Distilling",
+	 	 	 	"type": "spirit",
+	 	 	 	"amount": "1 dash"
+	 	 	},
+	 	 	{
+	 	 		"tradeName": "Angostura Bitters",
+	 	 		"ingredient": "Angostura Bitters",
+	 	 		"type": "bitters",
+	 	 	 	"brand": "Angostura",
+	 	 	 	"amount": "1 dash"	
+	 	 	}],
+	 	 "instructions": "Combine all ingredients into a cocktail shaker. Shake well with ice, and strain into a cocktail glass."
+	},
+	{"name": "Left Bank",
+	     "year": "",
+	     "description": "The Boston skyline looks better from here...",
+	     "technique": "stirred",
+	     "ice": "",
+	     "era": "modern",
+	     "glass": "up",
+	 	 "ingredients": [{
+	 	 		"tradeName": "Wire Works Gin",
+	 	 		"ingredient": "gin",
+	 	 		"brand": "GrandTen Distilling",
+	 	 	 	"type": "spirit",
+	 	 	 	"amount": "2 oz",
+	 	 	 	"isBase": true
+	 	 	},
+	 	 	{
+	 	 		"tradeName": "St-Germain Elderflower Liqueur",
+	 	 		"ingredient": "elderflower liqueur",
+	 	 		"brand": "St-Germain",
+	 	 	 	"type": "spirit",
+	 	 	 	"amount": "1 oz"
+	 	 	},
+	 	 	{ 	
+	 	 		"ingredient": "Sauvignon Blanc",
+	 	 		"type": "wine",
+	 	 		"amount": "1 oz"
+	 	 	}],
+	 	 "instructions": "Combine all ingredients into a mixing glass. Stir with ice, and strain into a cocktail glass. Garnish with a lime twist."
+	},
+	{"name": "Toronto",
+	     "year": "1948",
+	     "description": "Pairs perfectly with those crisp, autumn evenings on their way...",
+	     "technique": "stirred",
+	     "ice": "",
+	     "era": "historical",
+	     "glass": "up",
+	 	 "ingredients": [{
+	 	 		"tradeName": "rye whiskey",
+	 	 		"ingredient": "whiskey",
+	 	 	 	"type": "spirit",
+	 	 	 	"amount": "2 oz",
+	 	 	 	"isBase": true
+	 	 	},
+	 	 	{
+	 	 		"tradeName": "Fernet Branca",
+	 	 		"ingredient": "fernet",
+	 	 		"type": "spirit",
+	 	 	 	"brand": "Fratelli Branca",
+	 	 	 	"amount": ".25 oz"
+	 	 	},
+	 	 	{ 	
+	 	 		"ingredient": "simple syrup",
+	 	 		"type": "syrup",
+	 	 		"amount": ".25 oz"
+	 	 	}],
+	 	 "instructions": "Combine all ingredients into a mixing glass. Stir with ice, and strain into a cocktail glass. Garnish with an orange peel."
+	},
+	{"name": "Sweet and Hot",
+	     "year": "2012",
+	     "description": "Candyshop sweet, with a bit of a bite... careful, now!",
+	     "technique": "stirred",
+	     "ice": "cubed",
+	     "era": "modern",
+	     "glass": "rocks",
+	 	 "ingredients": [{
+	 	 		"tradeName": "GrandTen Fire Puncher Vodka",
+	 	 		"ingredient": "vodka",
+	 	 		"brand": "GrandTen Distilling",
+	 	 	 	"type": "spirit",
+	 	 	 	"amount": "2 oz",
+	 	 	 	"isBase": true
+	 	 	},
+	 	 	{
+	 	 		"ingredient": "maraschino liqueur",
+	 	 	 	"type": "spirit",
+	 	 	 	"amount": "1 oz"
+	 	 	},
+	 	 	{ 	
+	 	 		"ingredient": "cinnamon syrup",
+	 	 		"type": "syrup",
+	 	 		"amount": ".5 oz"
+	 	 	}],
+	 	 "instructions": "Combine all ingredients into a mixing glass. Stir with ice, and strain into a rocks glass over ice."
+	},
+	{"name": "Stinger",
+	     "year": "1917",
+	     "description": "Favored by the fighter-jockey and the aristocracy alike.",
+	     "technique": "shaken",
+	     "ice": "",
+	     "era": "historical",
+	     "glass": "up",
+	 	 "ingredients": [{
+	 	 		"ingredient": "brandy",
+	 	 	 	"type": "spirit",
+	 	 	 	"amount": "1 part",
+	 	 	 	"isBase": true
+	 	 	},
+	 	 	{
+	 	 		"ingredient": "creme de menthe",
+	 	 	 	"type": "spirit",
+	 	 	 	"amount": "1 part"
+	 	 	}],
+	 	 "instructions": "Combine all ingredients into a cocktail shaker. Shake well, and strain into a cocktail glass."
+	},
+	{"name": "Negroni",
+	     "year": "1919",
+	     "description": "The bitters are excellent for your liver, the gin is bad for you. They balance each other.",
+	     "technique": "stirred",
+	     "ice": "",
+	     "era": "historical",
+	     "glass": "up",
+	 	 "ingredients": [{
+	 	 		"ingredient": "gin",
+	 	 	 	"type": "spirit",
+	 	 	 	"amount": "1 part",
+	 	 	 	"isBase": true
+	 	 	},
+	 	 	{
+	 	 		"tradeName": "Campari",
+	 	 		"ingredient": "Campari",
+	 	 		"type": "spirit",
+	 	 		"amount": "1 part"
+	 	 	},
+	 	 	{
+	 	 		"ingredient": "sweet vermouth",
+	 	 	 	"type": "spirit",
+	 	 	 	"amount": "1 part"
+	 	 	}],
+	 	 "instructions": "Combine all ingredients into a mixing glass. Stir with ice, and strain into a cocktail glass. Garnish with an orange peel. Swap gin for bourbon, and you now have a Boulevardier!"
+	},
+	{"name": "Montreal",
+	     "year": "2012",
+	     "description": "Expertly crafted by Brother Cleve to welcome our northern brothers!",
+	     "technique": "stirred",
+	     "ice": "",
+	     "era": "modern",
+	     "glass": "up",
+	 	 "ingredients": [{
+	 	 		"tradeName": "Canadian whiskey",
+	 	 		"ingredient": "whiskey",
+	 	 	 	"type": "spirit",
+	 	 	 	"amount": "2 oz",
+	 	 	 	"isBase": true
+	 	 	},
+	 	 	{
+	 	 		"tradeName": "St-Germain Elderflower Liqueur",
+	 	 		"ingredient": "elderflower liqueur",
+	 	 		"brand": "St-Germain",
+	 	 	 	"type": "spirit",
+	 	 	 	"amount": "1 barspoon"
+	 	 	},
+	 	 	{
+	 	 		"tradeName": "Fernet Branca",
+	 	 		"ingredient": "fernet",
+	 	 		"type": "spirit",
+	 	 	 	"brand": "Fratelli Branca",
+	 	 	 	"amount": ".5 oz"
+	 	 	},
+	 	 	{
+	 	 		"tradeName": "Urban Moonshine Maple Bitters",
+	 	 		"ingredient": "maple bitters",
+	 	 		"brand": "Urban Moonshine",
+	 	 		"type": "bitters",
+	 	 		"amount": "2 dashes"		
+	 	 	}],
+	 	 "instructions": "Combine all ingredients into a mixing glass. Stir with ice, and strain into a cocktail glass. Garnish with a maraschino cherry."
+	},
+	{"name": "Hanky Panky",
+	     "year": "1925",
+	     "description": "For the ladies, by the ladies: something with a bit of a punch.",
+	     "technique": "stirred",
+	     "ice": "",
+	     "era": "historical",
+	     "glass": "up",
+	 	 "ingredients": [{
+	 	 		"ingredient": "gin",
+	 	 	 	"type": "spirit",
+	 	 	 	"amount": "1.5 oz",
+	 	 	 	"isBase": true
+	 	 	},
+	 	 	{
+	 	 		"ingredient": "sweet vermouth",
+	 	 	 	"type": "spirit",
+	 	 	 	"amount": "1.5 oz"
+	 	 	}, 		
+	 	 	{
+	 	 		"tradeName": "Fernet Branca",
+	 	 		"ingredient": "fernet",
+	 	 		"type": "spirit",
+	 	 	 	"brand": "Fratelli Branca",
+	 	 	 	"amount": ".25 oz"	
+	 	 	}],
+	 	 "instructions": "Combine all ingredients into a mixing glass. Stir with ice, and strain into a cocktail glass. Garnish with a small piece of orange peel."
+	},
+	{"name": "Gypsy Rose",
+	     "year": "2013",
+	     "description": "More tease, less strip: our tribute to the holy mother of ecdysiastry.",
+	     "technique": "shaken",
+	     "ice": "",
+	     "era": "modern",
+	     "glass": "up",
+	 	 "ingredients": [{
+	 	 		"tradeName": "Wire Works Gin",
+	 	 		"ingredient": "gin",
+	 	 		"brand": "GrandTen Distilling",
+	 	 	 	"type": "spirit",
+	 	 	 	"amount": "2 oz",
+	 	 	 	"isBase": true
+	 	 	},
+	 	 	{
+	 	 		"tradeName": "GrandTen Craneberry Liqueur",
+	 	 		"ingredient": "cranberry liqueur",
+	 	 		"brand": "GrandTen Distilling",
+	 	 	 	"type": "spirit",
+	 	 	 	"amount": "1.5 oz"
+	 	 	}, 		
+	 	 	{
+	 	 		"ingredient": "lime juice",
+	 	 		"type": "juice",
+	 	 		"amount": ".25 oz"	
+	 	 	}],
+	 	 "instructions": "Combine all ingredients into a cocktail shaker. Shake well with ice, and strain into a martini glass. Grate a little cinnamon on top to garnish."
+	},
+	{"name": "Hip to the Jive",
+	     "year": "2012",
+	     "description": "Our signature, crafted by Brother Cleve. Classic meets contemporary.",
+	     "technique": "stirred",
+	     "ice": "",
+	     "era": "modern",
+	     "glass": "up",
+	 	 "ingredients": [{
+	 	 		"ingredient": "gin",
+	 	 	 	"type": "spirit",
+	 	 	 	"amount": "1.5 oz",
+	 	 	 	"isBase" : true
+	 	 	},
+	 	 	{
+	 	 		"tradeName": "St-Germain Elderflower Liqueur",
+	 	 		"ingredient": "elderflower liqueur",
+	 	 		"brand": "St-Germain",
+	 	 	 	"type": "spirit",
+	 	 	 	"amount": "1 barspoon"
+	 	 	},
+	 	 	{
+	 	 		"ingredient": "dry vermouth",
+	 	 	 	"type": "spirit",
+	 	 	 	"amount": ".5 oz"
+	 	 	}, 	 		
+	 	 	{
+	 	 		"ingredient": "grapefruit bitters",
+	 	 		"type": "bitters",
+	 	 		"amount": "1 dash"	
+	 	 	}],
+	 	 "instructions": "Combine all ingredients into a mixing glass. Stir with ice, and strain into a cocktail glass. Garnish with a cocktail olive."
+	},
+	{"name": "Capone",
+	     "year": "2013",
+	     "description": "I am just a businessman, giving the people what they want.",
+	     "technique": "stirred",
+	     "ice": "",
+	     "era": "modern",
+	     "glass": "rocks",
+	 	 "ingredients": [{
+	 	 		"tradeName": "blended Scotch",
+	 	 		"ingredient": "scotch",
+	 	 	 	"type": "spirit",
+	 	 	 	"amount": "2 oz",
+	 	 	 	"isBase" : true
+	 	 	},
+	 	 	{
+	 	 		"tradeName": "GrandTen Amandine Liqueur",
+	 	 		"ingredient": "almond liqueur",
+	 	 		"brand": "GrandTen Distilling",
+	 	 	 	"type": "spirit",
+	 	 	 	"amount": "1.5 oz"
+	 	 	}, 	 		
+	 	 	{
+	 	 		"ingredient": "peach bitters",
+	 	 		"type": "bitters",
+	 	 		"amount": "1 dash"	
+	 	 	}],
+	 	 "instructions": "Combine all ingredients into a mixing glass. Stir well with ice, and strain into a rocks glass."
+	},
+	{"name": "Sazerac",
+	     "year": "1850",
+	     "description": "The official cocktail of New Orleans.",
+	     "technique": "stirred",
+	     "ice": "",
+	     "era": "historical",
+	     "glass": "rocks",
+	 	 "ingredients": [{
+	 	 		"tradeName": "rye whiskey",
+	 	 		"ingredient": "whiskey",
+	 	 	 	"type": "spirit",
+	 	 	 	"amount": "2.5 oz",
+	 	 	 	"isBase" : true
+	 	 	},
+	 	 	{
+	 	 		"ingredient": "sweet vermouth",
+	 	 	 	"type": "spirit",
+	 	 	 	"amount": ".75 oz"
+	 	 	}, 	 		
+	 	 	{
+	 	 		"ingredient": "simple syrup",
+	 	 		"type": "syrup",
+	 	 		"amount": ".5 oz"
+	 	 	},
+	 	 	{
+	 	 		"tradeName": "Peychaud's Bitters",
+	 	 		"ingredient": "Peychaud's Bitters",
+	 	 		"brand": "Peychaud",
+	 	 		"type": "bitters",
+	 	 		"amount": "3 dashes"	
+	 	 	},
+	 	 	{
+	 	 		"ingredient": "absinthe",
+	 	 		"type": "spirit",
+	 	 		"amount": "1 barspoon"	
+	 	 	}],
+	 	 "instructions": "Rinse the inside of a rocks glass with absinthe. Add simple syrup and bitters, then the whiskey. Stir and enjoy."
+	},
+	{"name": "The Mantini",
+	     "year": "2012",
+	     "description": "Let Brother Cleve take us a step further than the Martini...",
+	     "technique": "stirred",
+	     "ice": "",
+	     "era": "modern",
+	     "glass": "up",
+	 	 "ingredients": [{
+	 	 		"tradeName": "St. George Dry Rye Gin",
+	 	 		"ingredient": "gin",
+	 	 	 	"brand": "St. George Spirits",
+	 	 	 	"type": "spirit",
+	 	 	 	"amount": "2.5 oz",
+	 	 	 	"isBase" : true
+	 	 	},
+	 	 	{
+	 	 		"ingredient": "sweet vermouth",
+	 	 	 	"type": "spirit",
+	 	 	 	"amount": "1 oz"
+	 	 	}, 	 		
+	 	 	{
+	 	 		"ingredient": "orange bitters",
+	 	 		"type": "bitters",
+	 	 		"amount": "2 dashes"	
+	 	 	}],
+	 	 "instructions": "Combine all ingredients into a mixing glass. Stir with ice, and strain into a cocktail glass. Garnish with a cherry."
+	},
+	{"name": "Satan",
+	     "year": "1947",
+	     "description": "Trader Vic's 1947 classic - 'tis the season!",
+	     "technique": "stirred",
+	     "ice": "",
+	     "era": "historical",
+	     "glass": "up",
+	 	 "ingredients": [{
+	 	 		"tradeName": "Breaking and Entering Bourbon",
+	 	 		"ingredient": "whiskey",
+	 	 	 	"brand": "St. George Spirits",
+	 	 	 	"type": "spirit",
+	 	 	 	"amount": "2.25 oz",
+	 	 	 	"isBase" : true
+	 	 	},
+	 	 	{
+	 	 		"ingredient": "sweet vermouth",
+	 	 	 	"type": "spirit",
+	 	 	 	"amount": ".75 oz"
+	 	 	}, 	 	
+	 	 	{
+	 	 		"tradeName": "St. George Absinthe",
+	 	 		"ingredient": "absinthe",
+	 	 		"brand": "St. George Spirits",
+	 	 	 	"type": "spirit",
+	 	 	 	"amount": ".25 oz"
+	 	 	}, 	
+	 	 	{
+	 	 		"tradeName": "Peychaud's Bitters",
+	 	 		"ingredient": "Peychaud's Bitters",
+	 	 		"brand": "Peychaud",
+	 	 		"type": "bitters",
+	 	 		"amount": "1 dash"
+	 	 	}],
+	 	 "instructions": "Combine all ingredients into a mixing glass. Stir with ice, and strain into a cocktail glass."
+	},
+	{"name": "Ginger Fitz",
+	     "year": "2012",
+	     "description": "Take a delicious break from fits of jitterbug and charleston.",
+	     "technique": "shaken",
+	     "ice": "",
+	     "era": "modern",
+	     "glass": "rocks",
+	 	 "ingredients": [{
+	 	 		"tradeName": "St. George Botanivore Gin",
+	 	 		"ingredient": "gin",
+	 	 	 	"brand": "St. George Spirits",
+	 	 	 	"type": "spirit",
+	 	 	 	"amount": "2 oz",
+	 	 	 	"isBase" : true
+	 	 	},
+	 	 	{
+	 	 		"tradeName": "The King's Ginger",
+	 	 		"ingredient": "ginger liqueur",
+	 	 	 	"type": "spirit",
+	 	 	 	"amount": ".75 oz"
+	 	 	}, 	 	
+	 	 	{
+	 	 		"tradeName": "St-Germain Elderflower Liqueur",
+	 	 		"ingredient": "elderflower liqueur",
+	 	 		"brand": "St-Germain",
+	 	 	 	"type": "spirit",
+	 	 	 	"amount": "1 barspoon"
+	 	 	}],
+	 	 "instructions": "Combine all ingredients into a cocktail shaker. Shake well with ice, and strain into a rocks glass. Garnish with a small piece of candied ginger on a cocktail pick."
+	},
+	{"name": "The Bunny Hug",
+	     "year": "1911",
+	     "description": "The hot ragtime dance sensation sweeping across the floors, ca. 1911",
+	     "technique": "stirred",
+	     "ice": "",
+	     "era": "historical",
+	     "glass": "rocks",
+	 	 "ingredients": [{
+	 	 		"tradeName": "St. George Dry Rye Gin",
+	 	 		"ingredient": "gin",
+	 	 	 	"brand": "St. George Spirits",
+	 	 	 	"type": "spirit",
+	 	 	 	"amount": "1.5 oz",
+	 	 	 	"isBase" : true
+	 	 	},
+	 	 	{
+	 	 		"tradeName": "Breaking and Entering Bourbon",
+	 	 		"ingredient": "whiskey",
+	 	 	 	"brand": "St. George Spirits",
+	 	 	 	"type": "spirit",
+	 	 	 	"amount": "1.5 oz",
+	 	 	 	"isBase" : true
+	 	 	}, 	 	
+	 	 	{
+	 	 		"tradeName": "St. George Absinthe",
+	 	 		"ingredient": "absinthe",
+	 	 		"brand": "St. George Spirits",
+	 	 	 	"type": "spirit",
+	 	 	 	"amount": ".5 oz"
+	 	 	}],
+	 	 "instructions": "Combine all ingredients into a mixing glass. Stir with ice, and strain into a rocks glass."
+	},
+	{"name": "Brandy Alexander",
+	     "year": "1920",
+	     "description": "The tipple that graced royal weddings and board meetings.",
+	     "technique": "shaken",
+	     "ice": "",
+	     "era": "historical",
+	     "glass": "rocks",
+	 	 "ingredients": [{
+	 	 		"ingredient": "brandy",
+	 	 	 	"type": "spirit",
+	 	 	 	"amount": "1 part",
+	 	 	 	"isBase" : true
+	 	 	},
+	 	 	{
+	 	 		"ingredient": "creme de cacao",
+	 	 		"type": "spirit",
+	 	 	 	"amount": "1 part"
+	 	 	 },	 	 	
+	 	 	{
+	 	 		"ingredient": "heavy cream",
+	 	 	 	"type": "cream",
+	 	 	 	"amount": "1 part"
+	 	 	}],
+	 	 "instructions": "Combine all ingredients into a cocktail shaker. Shake well with ice, and strain into a rocks glass. Garnish with nutmeg if you like."
+	},
+	{"name": "Bittersweet Love",
+	     "year": "2012",
+	     "description": "What's the point of falling in love? And yet, just one more sip...",
+	     "technique": "stirred",
+	     "ice": "cubed",
+	     "era": "modern",
+	     "glass": "high",
+	 	 "ingredients": [{
+	 	 		"tradeName": "Wire Works Gin",
+	 	 		"ingredient": "gin",
+	 	 	 	"brand": "GrandTen Distilling",
+	 	 	 	"type": "spirit",
+	 	 	 	"amount": "1.5 oz",
+	 	 	 	"isBase" : true
+	 	 	},
+	 	 	{
+	 	 		"tradeName": "Campari",
+	 	 		"ingredient": "Campari",
+	 	 		"type": "spirit",
+	 	 	 	"amount": ".5 oz"
+	 	 	 },	 	 	
+	 	 	{
+	 	 		"ingredient": "orange juice",
+	 	 	 	"type": "juice",
+	 	 	 	"amount": ""
+	 	 	},	 	 	
+	 	 	{
+	 	 		"ingredient": "club soda",
+	 	 	 	"amount": ""
+	 	 	}],
+	 	 "instructions": "Add to an ice-filled Collins glass, and fill with a 50/50 mix of orange juice and club soda."
+	},
+	{"name": "Ascension",
+	     "year": "2012",
+	     "description": "Our tribute to Count de Saint-Germain: alchemist, charlatan, adventurer.",
+	     "technique": "stirred",
+	     "ice": "",
+	     "era": "modern",
+	     "glass": "up",
+	 	 "ingredients": [{
+	 	 		"tradeName": "Bombay Sapphire",
+	 	 		"ingredient": "gin",
+	 	 	 	"brand": "Bombay",
+	 	 	 	"type": "spirit",
+	 	 	 	"amount": "1 part",
+	 	 	 	"isBase" : true
+	 	 	},
+	 	 	{
+	 	 		"tradeName": "Bianco Vermouth",
+	 	 		"ingredient": "bianco vermouth",
+	 	 		"type": "spirit",
+	 	 	 	"brand": "Martini and Rossi",
+	 	 	 	"amount": "1 part"
+	 	 	 },	 	 	
+	 	 	{
+	 	 		"tradeName": "St-Germain Elderflower Liqueur",
+	 	 		"ingredient": "elderflower liqueur",
+	 	 	 	"brand": "St-Germain",
+	 	 	 	"type": "spirit",
+	 	 	 	"amount": "1 part"
+	 	 	},	 	 	
+	 	 	{
+	 	 		"tradeName": "Scrappy's Cardamom Bitters",
+	 	 		"ingredient": "cardamom bitters",
+	 	 	 	"type": "bitters",
+	 	 	 	"brand": "Scrappy's",
+	 	 	 	"amount": "1 dash"
+	 	 	}],
+	 	 "instructions": "Combine all ingredients in a mixing glass. Stir well with ice. Strain into a cocktail glass. Garnish with a lemon twist."
+	},
+	{"name": "The Lavender Splifficator",
+	     "year": "2012",
+	     "description": "A new take on ye olde Gin and Tonic",
+	     "technique": "stirred",
+	     "ice": "cubed",
+	     "era": "modern",
+	     "glass": "high",
+	 	 "ingredients": [{
+	 	 		"tradeName": "Wire Works Gin",
+	 	 		"ingredient": "gin",
+	 	 	 	"brand": "GrandTen Distilling",
+	 	 	 	"type": "spirit",
+	 	 	 	"amount": "2 oz",
+	 	 	 	"isBase" : true
+	 	 	},
+	 	 	{	
+	 	 		"ingredient": "tonic water",
+	 	 	 	"type": "soda",
+	 	 	 	"amount": ""
+	 	 	},
+	 	 	{
+	 	 		"tradeName": "Scrappy's Lavender Bitters",
+	 	 		"ingredient": "lavender bitters",
+	 	 	 	"type": "bitters",
+	 	 	 	"brand": "Scrappy's",
+	 	 	 	"amount": "2 dashes"
+	 	 	}],
+	 	 "instructions": "In a highball glass, pour the gin over ice. Add two dashes of bitters, then top off with tonic water."
+	},
+	{"name": "Martini",
+     	"year": "1880s",
+     	"description": "The classic: always satisfying, never shaken.",
+     	"technique": "stirred",
+	 	"ice": "",
+		"era": "historical",
+		"glass": "up",
+ 	 	"ingredients": [{
+	 	 		"tradeName": "Wire Works Gin",
+	 	 		"ingredient": "gin",
+	 	 	 	"brand": "GrandTen Distilling",
+	 	 	 	"type": "spirit",
+	 	 	 	"amount": "2 oz",
+	 	 	 	"isBase" : true
+	 	 	},
+	 	 	{
+	 	 		"ingredient": "dry vermouth",
+	 	 		"type": "spirit",
+	 	 	 	"amount": "1 oz"
+	 	 	 },
+	 	 	{
+	 	 		"ingredient": "orange bitters",
+	 	 		"type": "bitters",
+	 	 	 	"amount": "1 dash"
+	 	 	}],
+ 	 "instructions": "Combine all ingredients in a mixing glass. Stir with ice. Strain into martini glass. Garnish with a lemon peel."
+ 	},
+    {"name": "Manhattan",
+    	"year": "1874",
+ 	 	"description": "Classic Rye perfection.",
+ 	 	"technique": "stirred",
+	 	"ice": "",
+		"era": "historical",
+		"glass": "up",
+ 	 	"ingredients": [{
+ 	 			"tradeName": "rye whiskey",
+	 	 		"ingredient": "whiskey",
+	 	 	 	"type": "spirit",
+	 	 	 	"amount": "2 oz",
+	 	 	 	"isBase" : true
+	 	 	 },
+	 	 	{
+	 	 		"ingredient": "sweet vermouth",
+	 	 		"type": "spirit",
+	 	 	 	"amount": "1 oz"
+	 	 	 },
+	 	 	{
+	 	 		"tradeName": "Angostura Bitters",
+	 	 		"ingredient": "Angostura Bitters",
+	 	 		"type": "bitters",
+	 	 	 	"brand": "Angostura",
+	 	 	 	"amount": "1 dash"
+	 	 	 }],
+ 	 "instructions": "Combine all ingredients in a mixing glass. Stir with ice. Strain into Manhattan glass. Garnish with a cherry."	 
+	},
+    {"name": "Nat King Cole",
+    	"year": "2012",
+ 	 	"description": "All hail to the merry king! A marriage between two of our favorite liqueurs.",
+ 	 	"technique": "stirred",
+	 	"ice": "cubed",
+		"era": "modern",
+		"glass": "rocks",
+ 	 	"ingredients": [{
+	 	 		"tradeName": "Jack Daniels",
+	 	 	 	"ingredient": "whiskey",
+	 	 	 	"brand": "Jack Daniels",
+	 	 	 	"type": "spirit",
+	 	 	 	"amount": "2 oz",
+	 	 	 	"isBase" : true
+	 	 	 },
+	 	 	{
+	 	 		"tradeName": "St-Germain Elderflower Liqueur",
+	 	 		"ingredient": "elderflower liqueur",
+	 	 		"brand": "St-Germain",
+	 	 		"type": "spirit",
+	 	 	 	"amount": ".5 oz"
+	 	 	 },
+	 	 	{
+	 	 		"tradeName": "Fernet Branca",
+	 	 		"ingredient": "fernet",
+	 	 		"type": "spirit",
+	 	 	 	"brand": "Fratelli Branca",
+	 	 	 	"amount": ".25 oz"
+	 	 	 }],
+ 	 "instructions": "Combine all ingredients into a mixing glass. Stir with ice, and strain into a rocks glass over ice."	 
+	},
+   {"name": "In The Money!",
+    	"year": "2012",
+ 	 	"description": "Feel like ten grand with this tipple in your hand.",
+ 	 	"technique": "stirred",
+	 	"ice": "",
+		"era": "modern",
+		"glass": "up",
+ 	 	"ingredients": [{
+	 	 		"tradeName": "Wire Works Gin",
+	 	 	 	"ingredient": "gin",
+	 	 	 	"brand": "GrandTen Distilling",
+	 	 	 	"type": "spirit",
+	 	 	 	"amount": "1.5 oz",
+	 	 	 	"isBase" : true
+	 	 	 },
+	 	 	{
+	 	 		"tradeName": "Amère Nouvelle",
+	 	 		"ingredient": "amari",
+	 	 		"brand": "Bittermens",
+	 	 		"type": "spirit",
+	 	 	 	"amount": "1 oz"
+	 	 	 },
+	 	 	{
+	 	 		"tradeName": "Bianco Vermouth",
+	 	 		"ingredient": "bianco vermouth",
+	 	 		"type": "spirit",
+	 	 	 	"brand": "Martini and Rossi",
+	 	 	 	"amount": "1 oz"
+	 	 	 },
+	 	 	 {
+	 	 		"ingredient": "orange bitters",
+	 	 		"type": "bitters",
+	 	 	 	"amount": "1 dash"
+	 	 	 }],
+ 	 "instructions": "Combine all ingredients into a mixing glass. Stir with ice, and strain into a cocktail glass."	 
+	}]
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jive Boston :: Cocktails</title>
+	<link href="http://fonts.googleapis.com/css?family=Poller+One|Oleo+Script+Swash+Caps:400,700|Alice" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="./styles/newjive.css" />
+</head>
+<body>
+
+<div id="logoContainer">
+	<a href="index.html"><img src="./img/jive_logo.png" width="100%" alt="Jive" /></a>
+</div>	
+
+<div id="navContainer">
+	<ul id="navMenu">			
+		<li><a href="events.html">Past Events</a></li>
+		<li><a href="cocktails.html">Cocktails</a></li>
+		<li><a href="about.html">About Us</a></li>				
+		<li><a href="contact.html">Contact</a></li>
+	</ul>
+</div>
+
+<div id="contentContainer">
+
+<h1>The perfect cocktail...</h1>
+<p>Here at Jive headquarters, we believe in going to the next level with our dancing, our dress, and especially with our drinks. Our crack team of cocktailians are bringing back libations that were forced underground during the "noble experiment" of Prohibition, and cocktail legend Brother Cleve designs new ones that take full advantage of the spirits of the modern-day cocktail renaissance.</p>
+
+<p>Can't wait until our next event? We're excited to share our recipes so that you can make these drinks at home. Need help narrowing down the options? Try our new cocktail search!</p>
+
+
+<div id="cocktailSearchBox">
+
+<h3>Cocktail Search</h3>
+<p>Simply choose your criteria from the drop-downs, and with a click of the button you will have a selection of the recipes <b>you</b> want. You can select as many or few options as you'd like. Love Fernet Branca? Want to practice your hard shake? Let our Cocktail Search do the looking!</p>
+
+<form name="cocktailSearchForm" id="cocktailSearchForm">
+
+<table>
+	<tr>
+		<td>
+			Era:
+		</td>
+		<td>
+			<select id="ddlEra">
+
+			</select>
+		</td>
+
+		<td>
+			Technique:
+		</td>
+
+		<td>
+			<select id="ddlTechnique">
+
+			</select>
+		</td>
+	</tr>
+
+	<tr>
+		<td>
+			Brand:
+		</td>
+		<td>
+			<select id="ddlBrand">
+
+			</select>
+		</td>
+
+		<td>
+			Spirit:
+		</td>
+		<td>
+			<select id="ddlSpirits">
+
+			</select>
+		</td>
+	</tr>
+</table>
+			<div class="searchButton" onclick="performSearchButton()">find cocktails!</div>
+ </form>
+
+</div><!--end searchbox-->
+
+<!-- <div id="queryStringLink"></div> -->
+
+<div id="recipeContainer"></div>
+
+
+
+		
+
+</div>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/knockout/knockout-2.2.1.js"></script>
+	<script type="text/javascript" src="./scripts/logicgate.js"></script>
+	<script type="text/javascript" src="./scripts/jive_cocktailsearch.js"></script>
+</body></html>
