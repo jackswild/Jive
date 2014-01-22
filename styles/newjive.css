@@ -144,7 +144,12 @@ p:last-of-type {
 	padding: 0px 0px 20px 0px;
 }
 
-#cocktailSearchBox {
+iframe {
+	border: 5px double #000;
+	text-align: center;
+}
+
+#cocktailSearchBox, #indexContent {
 	width: 70%;
 	margin: 0px auto;
 	margin-bottom: 20px;
@@ -153,6 +158,12 @@ p:last-of-type {
 	border-radius: 5px;
 	box-shadow: 0px 0px 8px #222;
 	background-color: rgba(25%, 25%, 25%, 0.2);
+}
+
+#mapDiv {
+	padding-top: 10px;
+	margin: 0px auto;
+	text-align: center;
 }
 
 #cocktailSearchForm > table {
