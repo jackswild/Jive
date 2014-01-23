@@ -1,6 +1,6 @@
 body {
 	background-color: #222;
-	background-image: url(http://dev.jessicamarcus.com/Jive/img/jivebgimg.jpg);
+	background-image: url(http://www.jiveboston.com/img/jivebgimg.jpg);
 	background-size: 100%;
 	background-attachment: fixed;
 }
@@ -26,7 +26,7 @@ body {
 	padding: 20px 0px 20px 0px;
 	left: 47%;
 	margin: 0px auto;
-	content: url(http://dev.jessicamarcus.com/Jive/img/divider.png);	
+	content: url(http://www.jiveboston.com/img/divider.png);
 }
 
 /* aka 2014VersionOf1x1ClearGif :D */
@@ -222,11 +222,11 @@ iframe {
 	bottom: 0px;
 	left: 50%;
 	margin-left: -50px;
-	content: url(http://dev.jessicamarcus.com/Jive/img/divider2.png);	
+	content: url(http://www.jiveboston.com/img/divider2.png);
 }
 
 #recipeContainer ul {
-	list-style-image: url('../img/smarrow.png');
+	list-style-image: url('http://www.jiveboston.com/img/smarrow.png');
 	margin: 0px 0px 5px 30px;
 	padding: 0px;
 }

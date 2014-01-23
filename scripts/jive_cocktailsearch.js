@@ -1,4 +1,8 @@
-$.getJSON("http://dev.jessicamarcus.com/Jive/data/cocktails.json", function(data) {
+
+
+
+
+$.getJSON("http://www.jiveboston.com/data/cocktails.json", function(data) {
 
 	//substring(1) removes the leading ? from query string
 	var queryString = window.location.search.substring(1);
@@ -121,7 +125,7 @@ function performSearchButton() {
 //create new method to get recipes, and then filter them with parameter object you pass in.
 function doRecipeSearch(parameters) {
 	//get recipes - this code exists above 
-	$.getJSON("http://dev.jessicamarcus.com/Jive/data/cocktails.json", function(data) {
+	$.getJSON("http://www.jiveboston.com/data/cocktails.json", function(data) {
 		//getJson callback:
 		//filter them - this code already exists
 		var filteredRecipes = getRecipe(data.recipes, parameters);
